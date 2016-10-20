@@ -1,0 +1,34 @@
+<!-- this file is at ~/.m2, which is uesed to define the maven use local repositories on nexus -->
+<settings>
+    <mirrors>
+        <mirror>
+            <id>central</id>
+            <mirrorOf>*</mirrorOf>
+            <name>Local nexus</name>
+            <url>http://localhost:8081/nexus/content/groups/public/</url>
+        </mirror>
+    </mirrors>
+    <profiles>
+        <profile>
+            <id>nexus</id>
+            <repositories>
+                <repository>
+                    <id>nexus</id>
+                    <name>Nexus</name>
+                    <url>http://localhost:8081/nexus/content/groups/public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>nexus
+        <activeProfile>
+    </activeProfiles>
+</settings>
+
